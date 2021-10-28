@@ -9,9 +9,10 @@
 <body>
 <h1>Liste des voitures</h1>
 <a href="addCar">Ajouter une voiture</a>
-<br/><br/>
+<br>
+<br>
 <div>
-    <table border="1">
+    <table>
         <tr>
             <th>Id</th>
             <th>Marque</th>
@@ -21,12 +22,12 @@
             <th>Supprimer</th>
         </tr>
         <tr th:each ="car : ${cars}">
-            <td th:utext="${car.id}">...</td>
+            <td th:utext="${car.getId()}">...</td>
             <td th:utext="${car.brand}">...</td>
             <td th:utext="${car.model}">...</td>
             <td th:utext="${car.color}">...</td>
             <td><a th:href="@{/cars/{id}(id=${car.id})}">O</a></td>
-            <td><a th:href="@{/deleteCar/{id}(id=${car.id})}">X</a></td>e
+            <td><a th:href="@{/deleteCar/{id}(id=${car.id})}">X</a></td>
         </tr>
     </table>
 </div>
