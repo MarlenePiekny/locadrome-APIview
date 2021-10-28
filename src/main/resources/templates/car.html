@@ -7,9 +7,21 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h2 th:text="${car.brand}  +  ' ' + ${car.model} + ' ' + ${car.color}"></h2>
-
-<!--<button type="submit" th:action="@{/deleteCar/{id}(id=${car.id})}">Supprimer cette voiture</button>-->
+<form th:action="@{/updateCar/}"
+      th:object="${car}" method="POST">
+    <br/>
+    <input type="hidden" th:field="*{id}" th:value="*{id}" />
+    Marque:
+    <input type="text" th:field="*{brand}" th:value="*{brand}" />
+    <br/>
+    Model:
+    <input type="text" th:field="*{model}" th:value="*{model}" />
+    <br/>
+    Couleur:
+    <input type="text" th:field="*{color}" th:value="*{color}"/>
+    <br/>
+    <input type="submit" value="Modifier" />
+</form>
 
 <a th:href="@{/cars}">Liste des voitures</a>
 

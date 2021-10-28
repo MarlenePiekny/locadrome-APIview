@@ -54,4 +54,12 @@ public class ViewController {
         dataCarService.delete(id);
         return "redirect:/";
     }
+
+    //UPDATE CAR URI : /cars/add
+    @PostMapping(value = "/updateCar")
+    public String updateCar(Model model, //
+                          @ModelAttribute("car") Car car) {
+        dataCarService.update(car, car.getId());
+        return "redirect:/cars";
+    }
 }
