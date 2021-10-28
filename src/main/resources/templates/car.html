@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Voiture</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h2 th:text="${car.brand}  +  ' ' + ${car.model} + ' ' + ${car.color}"></h2>
+
+<button type="submit" th:action="@{/deleteCar/{id}(id=${car.id})}">Supprimer cette voiture</button>
+
+<a th:href="@{/cars}">Liste des voitures</a>
+
+</body>
+
+</html>
